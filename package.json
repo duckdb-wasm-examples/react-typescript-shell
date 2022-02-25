@@ -1,0 +1,32 @@
+{
+  "name": "react-typescript-shell",
+  "private": true,
+  "license": "MIT",
+  "type":"module",
+  "scripts": {
+    "start": "webpack serve --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "^1.13.1-dev230.0",
+    "@duckdb/duckdb-wasm-shell": "^1.13.1-dev230.0",
+    "apache-arrow": "^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "xterm": "^4.17.0",
+    "xterm-addon-fit": "^0.5.0",
+    "xterm-addon-web-links": "^0.5.1",
+    "xterm-addon-webgl": "^0.11.4"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^17.0.11",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "style-loader": "^3.3.1",
+    "css-loader": "^6.6.0",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.5.5",
+    "html-webpack-plugin": "^5.5.0"
+  }
+}
