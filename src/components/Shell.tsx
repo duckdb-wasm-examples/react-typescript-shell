@@ -1,6 +1,6 @@
 import React from 'react';
 import 'xterm/css/xterm.css';
-import styles from '../static/app.module.css';
+import '../static/globals.css';
 
 import * as duckdb from '@duckdb/duckdb-wasm';
 import duckdb_wasm from '@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm';
@@ -40,7 +40,7 @@ export const Shell: React.FC<SomeComponentProps> = (props: SomeComponentProps) =
         });
     }, []);
     return (
-        <div className={styles.container}>
+        <div className="container">
             <div ref={term} />;
         </div>
     );

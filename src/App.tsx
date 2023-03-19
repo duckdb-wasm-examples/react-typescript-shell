@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './static/logo.svg';
 import './static/App.css';
-import './static/globals.css';
+
 import 'xterm/css/xterm.css';
 import { Shell } from './components/Shell';
 
