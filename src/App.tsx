@@ -4,6 +4,7 @@ import './static/App.css';
 
 import 'xterm/css/xterm.css';
 import { Shell } from './components/Shell';
+import { Map } from './components/Map';
 
 type SomeComponentProps = Record<string, string>;
 
@@ -22,6 +23,7 @@ export const App: React.FC<SomeComponentProps> = (propr: SomeComponentProps) => 
                 <button onClick={() => setCount(count + 1)}>Click me</button>
             </header>
             <Shell />
+            <Map />
         </div>
     );
 };

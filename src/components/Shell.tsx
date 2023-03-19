@@ -35,13 +35,23 @@ export const Shell: React.FC<SomeComponentProps> = (props: SomeComponentProps) =
                 const worker = new Worker(bundle.mainWorker!);
                 const db = new duckdb.AsyncDuckDB(logger, worker);
                 await db.instantiate(bundle.mainModule);
+
+                // insert data
+                const c = await db.connect();
+                await c.query(`
+                    CREATE TABLE direct_manual AS
+                        SELECT * FROM 'https://shell.duckdb.org/data/tpch/0_01/parquet/orders.parquet' LIMIT 10;
+                `);
+                // close the connection
+                await c.close();
+
                 return db;
             },
         });
     }, []);
     return (
         <div className="container">
-            <div ref={term} />;
+            <div ref={term} />
         </div>
     );
 };
