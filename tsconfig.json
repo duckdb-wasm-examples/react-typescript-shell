@@ -3,6 +3,7 @@
         "baseUrl": "./src",
         "outDir": "./build/ts/",
         "target": "es5",
+        "jsx": "react-jsx",
         "module": "es2020",
         "moduleResolution": "node",
         "sourceMap": true,
@@ -13,15 +14,14 @@
         "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true,
-        "jsx": "react-jsx",
         "plugins": [{ "name": "typescript-plugin-css-modules" }],
         "lib": ["es6", "es2020", "dom"],
         "paths": {
             "@/*": ["src/*"]
         }
     },
-    "exclude": ["./node_modules"],
-    "include": ["./src/**/*", "./test/**/*", "./types/*.d.ts", "**/*.tsx",],
+    "exclude": ["./node_modules_j"],
+    "include": ["./src/**/*", "./test/**/*", "./types/*.d.ts", "**/*.tsx", "**/*.js", "**/*.ts", "/node_modules/"],
     "resolve": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
     },

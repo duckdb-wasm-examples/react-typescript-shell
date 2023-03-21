@@ -10,11 +10,7 @@ module.exports = {
     plugins: ['prettier', 'jest'],
     parserOptions: {
         project: [
-            './cloud/tsconfig.json',
-            './account/tsconfig.json',
-            './management/tsconfig.json',
-            './registry/tsconfig.json',
-            './libs/*/tsconfig.json',
+            './tsconfig.json',
         ],
         tsconfigRootDir: path.resolve(__dirname, './'),
         createDefaultProgram: true,

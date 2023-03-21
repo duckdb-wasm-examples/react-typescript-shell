@@ -27,7 +27,8 @@ export default {
             {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
-                exclude: /node_modules/,
+                options: { allowTsInNodeModules: true } // also introduced this to mitigate errors
+                // exclude: /node_modules/, // commenting this vanishes the "unexpected token" error in node_modules
             },
             {
                 test: /.*\.wasm$/,
