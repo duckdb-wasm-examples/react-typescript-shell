@@ -1,14 +1,7 @@
 import React from 'react';
-import logo from './static/logo.svg';
 import './static/App.css';
-
 import 'xterm/css/xterm.css';
-import { Shell } from './components/Shell';
-import { Map } from './components/Map';
-
-
 import './static/globals.css';
-import 'xterm/css/xterm.css';
 
 import * as duckdb from '@duckdb/duckdb-wasm';
 import duckdb_wasm from '@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm';
@@ -16,6 +9,11 @@ import duckdb_wasm_eh from '@duckdb/duckdb-wasm/dist/duckdb-eh.wasm';
 import duckdb_wasm_coi from '@duckdb/duckdb-wasm/dist/duckdb-coi.wasm';
 
 import { DuckDBConnectionProvider, DuckDBPlatform, DuckDBProvider } from '@duckdb/react-duckdb';
+
+import logo from './static/logo.svg';
+import { Map } from './components/Map';
+import { Shell } from './components/Shell';
+
 const DUCKDB_BUNDLES: duckdb.DuckDBBundles = {
     mvp: {
         mainModule: duckdb_wasm,
@@ -35,7 +33,6 @@ const DUCKDB_BUNDLES: duckdb.DuckDBBundles = {
     },
 };
 const logger = new duckdb.ConsoleLogger(duckdb.LogLevel.WARNING);
-
 
 type SomeComponentProps = Record<string, string>;
 

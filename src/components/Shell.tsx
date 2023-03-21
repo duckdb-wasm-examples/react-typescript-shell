@@ -86,10 +86,8 @@ export const Shell: React.FC<ShellProps> = (props: ShellProps) => {
         backgroundColor: props.backgroundColor || 'transparent',
     };
     return (
-        <div className='root' style={style}>
-            <div ref={termContainer} className='term_container' />
+        <div className="root" style={style}>
+            <div ref={termContainer} className="term_container" />
         </div>
     );
 };
-
-

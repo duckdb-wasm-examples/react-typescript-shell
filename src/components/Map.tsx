@@ -1,10 +1,8 @@
 import React from 'react';
 import * as rd from '@duckdb/react-duckdb';
-import arrow from "apache-arrow";
-
+import arrow from 'apache-arrow';
 
 export const Map: React.FC = () => {
-
     const db = rd.useDuckDB();
 
     const handleClick = async () => {
@@ -14,20 +12,24 @@ export const Map: React.FC = () => {
                 SELECT * FROM 'https://shell.duckdb.org/data/tpch/0_01/parquet/orders.parquet' LIMIT 10;
         `);
         await c.close();
-    }
+    };
 
     const handleClickRender = async () => {
         const c = await db!.value!.connect();
-        var result = await c.query<{ v: arrow.Int }>("SELECT * FROM from_map LIMIT 4;");
+        const result = await c.query<{ v: arrow.Int }>('SELECT * FROM from_map LIMIT 4;');
         console.log(result.toString());
         await c.close();
-    }
+    };
 
     return (
         <div>
             <h1>Data functions:</h1>
-            <button className="btn btn-secondary" onClick={handleClick}>Load</button>
-            <button className="btn-btn-secondary" onClick={handleClickRender}>Render</button>
+            <button className="btn btn-secondary" onClick={handleClick}>
+                Load
+            </button>
+            <button className="btn-btn-secondary" onClick={handleClickRender}>
+                Render
+            </button>
         </div>
     );
 };
